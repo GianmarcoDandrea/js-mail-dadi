@@ -5,9 +5,9 @@ console.log(computerNumber, userNumber);
 
 let result = "";
 if (computerNumber > userNumber) {
-    result = "Mi spiace hai perso... prova ancora";
+    result = "Mi spiace hai perso :(   ... prova ancora.";
 } else if (computerNumber === userNumber) {
-    result = "E' uscito pari...prova ancora"
+    result = "E' uscito pari...prova ancora."
 } else {
     result = "Congratulazioni hai vinto!!!"
 }
