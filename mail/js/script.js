@@ -1,24 +1,32 @@
 const emailAuthorized = ["vakevi6421@gmail.com" , "gianmarco@gmail.com" , "songoku@gmail.com" , "sayanprince@gmail.com" , "iloveramen@gmail.com" , "doitboy@gmail.com" , "gianluca@gmail.com" ,"olga@gmail.com" , "matteo@gmail.com" , "loris@gmail.com" , "luca@gmail.com" , "virgilio@gmail.com"];
 
-const userEmail = prompt ("Inserisci la tua email per l'accesso");
+const userEmailElem =  document.getElementById("email");
+const sendBtn = document.getElementById("send");
 
-let result = false;
+sendBtn.addEventListener("click", function () {
 
-for (i=0 ; i < emailAuthorized.length ; i++) {
-    const curEmail = emailAuthorized[i];
-    
-    if (curEmail === userEmail) {
-        result = true;
+    const userEmail = userEmailElem.value;
+    let result = false;
+
+    for (i=0 ; i < emailAuthorized.length ; i++) {
+        const curEmail = emailAuthorized[i];
+        
+        if (curEmail === userEmail) {
+            result = true;
+        }
     }
-}
 
-console.log(result);
+    console.log(result);
 
-let message ="";
-if (result === true) {
-    message = "Puoi accedere al servizio";
-} else {
-    message = "Non puoi accedere al servizio"
-}
+    let message ="";
+    if (result) {
+        message = "Puoi accedere al servizio";
+    } else {
+        message = "Non puoi accedere al servizio"
+    }
 
-console.log(message);
+    console.log(message);
+
+    document.getElementById("final-message").innerHTML = message;
+
+});
